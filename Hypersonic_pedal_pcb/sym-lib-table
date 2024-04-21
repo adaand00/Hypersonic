@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "HypersonicLib")(type "KiCad")(uri "${KIPRJMOD}/../Hypersonic_pcb/HypersonicLib.kicad_sym")(options "")(descr ""))
+)

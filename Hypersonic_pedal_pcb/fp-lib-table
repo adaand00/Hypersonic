@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "FPlib")(type "KiCad")(uri "C:/Users/adaan/Documents/GitHub/Hypersonic/Hypersonic_pcb/FPlib.pretty")(options "")(descr ""))
+  (lib (name "PedalLib")(type "KiCad")(uri "${KIPRJMOD}/PedalLib.pretty")(options "")(descr ""))
+)
