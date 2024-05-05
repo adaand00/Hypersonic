@@ -22,7 +22,8 @@
       ]
     ],
     "mcu": "esp32s3",
-    "variant": "lolin_s3"
+    "variants_dir": "variants",
+    "variant": "hypersonic"
   },
   "connectivity": [
     "bluetooth",
