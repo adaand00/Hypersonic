@@ -544,7 +544,7 @@
       "plot": "Hypersonic_grb",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Hypersonic_pcb.step",
       "svg": "",
       "vrml": ""
     },

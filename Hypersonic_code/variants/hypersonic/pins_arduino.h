@@ -44,7 +44,7 @@ static const uint8_t I2S_DO   = 39;
 static const uint8_t I2S_WCLK = 40;
 static const uint8_t I2S_BCLK = 41;
 static const uint8_t I2S_MCLK = 42;
-static const uint8_t CODEC_EN = 41;
+static const uint8_t CODEC_EN = 21;
 
 // UART
 static const uint8_t TX = 43;

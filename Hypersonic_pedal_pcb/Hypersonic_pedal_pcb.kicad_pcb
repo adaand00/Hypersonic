@@ -355,7 +355,7 @@
 		(descr "Potentiometer, vertical, Bourns PTV09A-1 Single, http://www.bourns.com/docs/Product-Datasheets/ptv09.pdf")
 		(tags "Potentiometer vertical Bourns PTV09A-1 Single")
 		(property "Reference" "RV1"
-			(at 6.05 -10.15 270)
+			(at 6.05 -10.15 -90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "57bcbc26-4111-4729-9ac9-4b415dbbbc3a")
@@ -367,7 +367,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 6.05 5.15 270)
+			(at 6.05 5.15 -90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "be6c176a-f098-454c-be7e-23eb75c57aba")
@@ -1222,7 +1222,7 @@
 		(descr "Potentiometer, vertical, Bourns PTV09A-1 Single, http://www.bourns.com/docs/Product-Datasheets/ptv09.pdf")
 		(tags "Potentiometer vertical Bourns PTV09A-1 Single")
 		(property "Reference" "RV3"
-			(at 6.05 -10.15 270)
+			(at 6.05 -10.15 -90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "d20bcb88-96f6-4c59-a9b2-8b7b7732d042")
@@ -1234,7 +1234,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 6.05 5.15 270)
+			(at 6.05 5.15 -90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3a9d41a0-2fdf-4897-b348-f49b91b040bd")
@@ -1544,7 +1544,7 @@
 		(descr "Potentiometer, vertical, Bourns PTV09A-1 Single, http://www.bourns.com/docs/Product-Datasheets/ptv09.pdf")
 		(tags "Potentiometer vertical Bourns PTV09A-1 Single")
 		(property "Reference" "RV2"
-			(at 6.05 -10.15 270)
+			(at 6.05 -10.15 -90)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "e538c298-02ac-4aac-84f0-13d5e120c429")
@@ -1556,7 +1556,7 @@
 			)
 		)
 		(property "Value" "1K"
-			(at 6.05 5.15 270)
+			(at 6.05 5.15 -90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a8da6e32-f2b4-4139-95ef-dfd66a739dce")
@@ -3204,7 +3204,7 @@
 		(descr "SMD Solder Jumper, 1x1.5mm Triangular Pads, 0.3mm gap, open")
 		(tags "solder jumper open")
 		(property "Reference" "JP5"
-			(at 0 1.8 270)
+			(at 0 1.8 -90)
 			(layer "B.SilkS")
 			(hide yes)
 			(uuid "1c8b4d98-100f-40bb-98e7-671dbab85c80")
@@ -3217,7 +3217,7 @@
 			)
 		)
 		(property "Value" "SolderJumper_2_Open"
-			(at 0 -1.9 270)
+			(at 0 -1.9 -90)
 			(layer "B.Fab")
 			(hide yes)
 			(uuid "a6bcd52d-74e9-4686-9527-595eb8fcb0eb")
@@ -5130,7 +5130,7 @@
 		(descr "Slim Jacks, 6.35mm (1/4in) stereo jack, switched, fully threaded nose, https://www.neutrik.com/en/product/nrj6hf")
 		(tags "neutrik jack slim")
 		(property "Reference" "J3"
-			(at 6.35 3.5 360)
+			(at 6.35 3.5 0)
 			(layer "B.SilkS")
 			(hide yes)
 			(uuid "8b02a803-aadb-45a1-a593-f343f74b2236")
@@ -5143,7 +5143,7 @@
 			)
 		)
 		(property "Value" "AudioJack3"
-			(at 6.35 -15 360)
+			(at 6.35 -15 0)
 			(layer "B.Fab")
 			(hide yes)
 			(uuid "7d3ccce7-b9b7-4ff2-9cf3-6b1da240196f")
@@ -5387,7 +5387,7 @@
 			(uuid "e6ae16aa-5716-4a01-91df-2e65f8898b6a")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 6.35 -5.715 360)
+			(at 6.35 -5.715 0)
 			(layer "B.Fab")
 			(uuid "2ea098ac-7adc-4227-9ef9-c4b3d47ddafc")
 			(effects
@@ -5710,7 +5710,7 @@
 		(descr "C, Rect series, Radial, pin pitch=15.00mm, , length*width=18*8mm^2, Capacitor, http://www.wima.com/EN/WIMA_FKS_3.pdf")
 		(tags "C Rect series Radial pin pitch 15.00mm  length 18mm width 8mm Capacitor")
 		(property "Reference" "C1"
-			(at 7.499999 5.25 360)
+			(at 7.499999 5.25 0)
 			(layer "B.SilkS")
 			(hide yes)
 			(uuid "0be499e3-30c6-42ba-bef3-75e3d662ce3f")
@@ -5723,7 +5723,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 7.499999 -5.25 360)
+			(at 7.499999 -5.25 0)
 			(layer "B.Fab")
 			(hide yes)
 			(uuid "2b771e76-a979-40ac-a2fe-f6a56779a103")
@@ -5900,7 +5900,7 @@
 			(uuid "6b1730c6-d11e-4e17-8183-0487728c86c4")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 7.5 0 360)
+			(at 7.5 0 0)
 			(layer "B.Fab")
 			(uuid "c47926b3-febc-42ac-984b-f4a01319cf08")
 			(effects
@@ -6771,7 +6771,7 @@
 		(descr "C, Rect series, Radial, pin pitch=15.00mm, , length*width=18*8mm^2, Capacitor, http://www.wima.com/EN/WIMA_FKS_3.pdf")
 		(tags "C Rect series Radial pin pitch 15.00mm  length 18mm width 8mm Capacitor")
 		(property "Reference" "C2"
-			(at 7.499999 5.25 360)
+			(at 7.499999 5.25 0)
 			(layer "B.SilkS")
 			(hide yes)
 			(uuid "0a4f2b83-db6b-46e3-8b23-43d0fba1c1e7")
@@ -6784,7 +6784,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 7.499999 -5.25 360)
+			(at 7.499999 -5.25 0)
 			(layer "B.Fab")
 			(hide yes)
 			(uuid "4057cd1b-a2e9-40c3-beff-42358743f4a8")
@@ -6961,7 +6961,7 @@
 			(uuid "4075abcd-4cf5-41e2-8caa-c5f7ff551b80")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 7.5 0 360)
+			(at 7.5 0 0)
 			(layer "B.Fab")
 			(uuid "332c4d85-668b-4670-9d28-dbc1344c2cb0")
 			(effects
