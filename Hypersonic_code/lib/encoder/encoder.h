@@ -12,6 +12,7 @@ private:
 
   pcnt_unit_t unit_;
   uint8_t pin_SW_;
+  int offset_ = 0;
 
 public:
 
@@ -32,8 +33,8 @@ public:
       .ctrl_gpio_num = pin_B,
       .lctrl_mode = PCNT_MODE_REVERSE,
       .hctrl_mode = PCNT_MODE_KEEP,
-      .pos_mode = PCNT_COUNT_DEC,
-      .neg_mode = PCNT_COUNT_INC,
+      .pos_mode = PCNT_COUNT_INC,
+      .neg_mode = PCNT_COUNT_DEC,
       .counter_h_lim = INT16_MAX,
       .counter_l_lim = INT16_MIN,
       .unit = unit_,
@@ -46,8 +47,8 @@ public:
     dev_conf.pulse_gpio_num = pin_B;
     dev_conf.ctrl_gpio_num = pin_A;
     dev_conf.channel = PCNT_CHANNEL_1;
-    dev_conf.pos_mode = PCNT_COUNT_INC;
-    dev_conf.neg_mode = PCNT_COUNT_DEC;
+    dev_conf.pos_mode = PCNT_COUNT_DEC;
+    dev_conf.neg_mode = PCNT_COUNT_INC;
     ESP_ERROR_CHECK(pcnt_unit_config(&dev_conf));
     
     pcnt_counter_pause(unit_);
@@ -63,8 +64,15 @@ public:
     int16_t val = 0;
     pcnt_get_counter_value(unit_, &val);
 
-    return (val+1)>>2;
+    return ((val+1)>>2) + offset_;
   };
+
+  void set_count(int count){
+    int16_t val = 0;
+    pcnt_get_counter_value(unit_, &val);
+
+    offset_ = count - ((val+1)>>2); 
+  }
 
   bool get_button(){
     return !digitalRead(pin_SW_);
