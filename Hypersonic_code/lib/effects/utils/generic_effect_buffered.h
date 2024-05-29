@@ -12,7 +12,8 @@ protected:
     Parameter params_[NUM_PARAMS];
     
 public:
-    std::string name_;
+    std::string name_ = "unnamed";
+    bool bypassed=false;
 
     GenericEffectBuffered(){};
 
@@ -22,14 +23,13 @@ public:
 
     virtual void draw_screen(TFT_eSprite * display) = 0;
 
-    void setParam(float value, int param_num){
-        if(param_num > NUM_PARAMS || param_num < 0) {
+    void setParam(float value, uint8_t param_num){
+        if(param_num > NUM_PARAMS) {
             return;
         }
 
         params_[param_num].set(value);
     };
-
 
     inline float getParam(uint8_t param_num){
         if(param_num > NUM_PARAMS) {

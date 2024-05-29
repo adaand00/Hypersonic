@@ -7,6 +7,7 @@
 
 #include "gain.h"
 #include "Saturatio.h"
+#include "meter.h"
 
 #define LCD_BL A0
 
@@ -21,7 +22,7 @@
 std::vector<GenericEffectBuffered *> effects;
 
 TFT_eSPI tft = TFT_eSPI();
-int BL_BRIGHTNESS = 50;
+int BL_BRIGHTNESS = 100;
 TFT_eSprite canvas = TFT_eSprite(&tft);
 TFT_eSprite background = TFT_eSprite(&tft);
 
@@ -71,11 +72,14 @@ void dsp_task(void * params) {
     // Read into t1
     codec.read(t1, chunksize);
 
-    effects.at(1)->dsp_buffer(t1, t2, chunksize);
-
-    /*
+    //effects.at(1)->dsp_buffer(t1, t2, chunksize);
 
     for(int i=0; i<effects.size(); i++){
+      // bypass 
+      if(effects.at(i)->bypassed){
+        continue;
+      }
+      
       // process effect
       effects.at(i)->dsp_buffer(t1, t2, chunksize);
 
@@ -84,10 +88,9 @@ void dsp_task(void * params) {
       t1 = t2;
       t2 = t; 
     }
-    */
 
     // Write output buffer
-    codec.write(t2, chunksize);
+    codec.write(t1, chunksize);
 
   }
 }
@@ -111,9 +114,12 @@ void inputs_task(void * params) {
     pots[0] = pots[0]*pots_alpha + (1-pots_alpha)*analogRead(POT0)*POT_SCALE;
     pots[1] = pots[1]*pots_alpha + (1-pots_alpha)*analogRead(POT1)*POT_SCALE;
     pots[2] = pots[2]*pots_alpha + (1-pots_alpha)*analogRead(POT2)*POT_SCALE;
-    effects.at(1)->setParam(pots[0], 0);
-    effects.at(1)->setParam(pots[1], 1);
-    effects.at(1)->setParam(pots[2], 2);
+
+    
+
+    effects.at(0)->setParam(pots[0], 0);
+    effects.at(2)->setParam(pots[1], 1);
+    effects.at(2)->setParam(pots[2], 2);
     xTaskDelayUntil(&lastWake, period);
   }
 }
@@ -146,12 +152,11 @@ void screen_task(void * params) {
 
   while (1)
   {
-    canvas.fillScreen(0);
+    canvas.fillSprite(0);
     int c = enc.get_count();
     int es = effects.size();
 
     tft.setCursor(0,0);
-    
 
     if (c < 0) {
       enc.set_count(-1);
@@ -193,7 +198,9 @@ void screen_task(void * params) {
 void setup() {
   // Initialize effects
   effects.push_back(new GainEffect());
+  effects.push_back(new Meter());
   effects.push_back(new Saturation());
+
 
   // Start tasks  
   xTaskCreatePinnedToCore
